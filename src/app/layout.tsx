@@ -3,10 +3,11 @@ import './globals.css';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { LearningProgressProvider } from '@/hooks/useLearningProgress';
+import { AiAssistantWidget } from '@/components/AiAssistantWidget';
 
 export const metadata: Metadata = {
-  title: 'UE5 Starter Roadmap | 언리얼 엔진 5 입문자 가이드',
-  description: '언리얼 엔진 5 게임 제작 입문자를 위한 단계별 학습 로드맵, 블루프린트/C++ 사전, 복습 퀴즈 및 진도 관리 웹 앱',
+  title: 'UE5 Starter Roadmap | 언리얼 엔진 5 입문자 가이드 & AI 멘토',
+  description: '언리얼 엔진 5 게임 제작 입문자를 위한 단계별 학습 로드맵, 블루프린트/C++ 사전, 복습 퀴즈, 진도 관리 및 Gemini 3.8 Flash AI 어시스턴트',
 };
 
 export default function RootLayout({
@@ -23,6 +24,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <AiAssistantWidget />
         </LearningProgressProvider>
       </body>
     </html>
