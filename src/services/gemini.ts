@@ -53,10 +53,10 @@ const SYSTEM_INSTRUCTION = `당신은 언리얼 엔진 5(UE5) 전문 수석 테�
 3. [가독성 높은 포맷]: 코드는 마크다운 코드 블록(\`\`\`cpp 또는 \`\`\`text)으로 감싸고, 주요 단축키와 노드명은 볼드체 또는 백틱으로 강조합니다.
 4. [정중하고 격려하는 어조]: 학습자가 게임 개발에 자신감을 가질 수 있도록 친절하게 안내합니다.`;
 
-/** 브라우저에 저장된 API Key 조회 */
+/** 브라우저에 저장된 API Key 조회 (환경변수 fallback 지원) */
 export const getStoredApiKey = (): string => {
-  if (typeof window === 'undefined') return '';
-  return localStorage.getItem(STORAGE_KEY_API_KEY) || '';
+  if (typeof window === 'undefined') return process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
+  return localStorage.getItem(STORAGE_KEY_API_KEY) || process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
 };
 
 /** API Key 로컬 저장 */
